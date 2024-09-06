@@ -1,0 +1,44 @@
+{
+  "id": "4541507",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "40250377",
+      "name": "书",
+      "font_class": "book",
+      "unicode": "e8bf",
+      "unicode_decimal": 59583
+    },
+    {
+      "icon_id": "40250378",
+      "name": "书签",
+      "font_class": "book2",
+      "unicode": "e8c0",
+      "unicode_decimal": 59584
+    },
+    {
+      "icon_id": "40250394",
+      "name": "汉堡面包",
+      "font_class": "fastfood",
+      "unicode": "e8c2",
+      "unicode_decimal": 59586
+    },
+    {
+      "icon_id": "40250423",
+      "name": "音乐",
+      "font_class": "a-musicquality",
+      "unicode": "e8c7",
+      "unicode_decimal": 59591
+    },
+    {
+      "icon_id": "40250568",
+      "name": "视频",
+      "font_class": "mv",
+      "unicode": "e8d0",
+      "unicode_decimal": 59600
+    }
+  ]
+}
