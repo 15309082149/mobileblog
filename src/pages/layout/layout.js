@@ -6,10 +6,13 @@ import s from './layout.module.scss'
 import request from '../../utils/request.js'
 import { useNavigate } from 'react-router-dom'
 const Layout = () => {
-  const search1 = useRef(null)
-  const navigate = useNavigate()
-  const [list,setlist] = useState([])
+  const search1 = useRef(null)  //useref获得搜索框的value
+  const navigate = useNavigate() //路由
+  const [list,setlist] = useState([])  //使用一个list不断更新三种状态：1.初始获取所有文章，2.分类获取文章，3.搜索获取文章
+
+
     useEffect(() => {
+
       const empty = document.getElementById('empty')
       if(list.length === 0){                                  //通过判断是否有文章来进行空状态的隐藏，就不用在每次加载完后进行隐藏，减少代码量且逻辑更加严谨
         empty.style.display= 'block'
@@ -17,10 +20,13 @@ const Layout = () => {
       else {
         empty.style.display= 'none'
       }
-    })
+    }) //不断进行判断
+
+
     useEffect(()=> {
+
       async function get()  {
-        const data = await request.get('/blogtext')
+        const data = await request.get('/blogtext')           //初始获取所有文章
         setlist(data.data)
         if(list) {                                            //加载动画逻辑也同上
           const load = document.getElementById('load')
@@ -30,10 +36,14 @@ const Layout = () => {
       }
       get()
     },[])
+
+
     function navigateto(id) {
         navigate(`/details?id=${id}`)                          //动态路由
     }
-    async function drop(e) {
+
+
+    async function drop(e) {                                //分类查找文章
       const data = await request.get('/flqd',{
         params: {
           fl: String(e)                                         //关键词查找实现分类
@@ -41,7 +51,9 @@ const Layout = () => {
       })
       setlist(data.data)
     }
-    async function search(val) {
+
+
+    async function search(val) {                               //关键词查找文章
       setlist([])
           const load = document.getElementById('load')
           load.style.display = 'block'
@@ -51,8 +63,10 @@ const Layout = () => {
         }
       })
       setlist(data.data)
-      load.style.display = 'none'
+      load.style.display = 'none'  //关闭load动画
     }
+
+
     return (
         <div className={s.all}>
           <div className={s.top_all}>
@@ -120,9 +134,9 @@ const Layout = () => {
           <div id="empty" className={s.empty}>
            <Empty description='暂无数据'/></div>
             <div className={s.mid_all}>
-          {list.map((item) => {
+          {list.map((item,index) => {
               return (
-                    <div className={s.mid_module} onClick={()=> navigateto(item.id)} key={item.id}>
+                    <div className={s.mid_module} onClick={()=> navigateto(item.id)} key={index}>
                       <div className={s.mid_mod_img}><img src='https://img2.imgtp.com/2024/05/10/XzdytL5g.jpg' alt='error' className={s.img}></img></div>
                       <div className={s.mid_mod_text}>{item.title}</div>
                     </div>

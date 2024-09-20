@@ -6,18 +6,25 @@ import { useNavigate } from 'react-router-dom'
 import javar from '../../utils/javar.js'
 import user from '../../store/user.js'
 const Login = () => {
+
   const setid = user((state)=>state.setid)
   const navigate = useNavigate()
   const [ac,setac] = useState('')
   const [pa,setpa] = useState('')
+
+
   function setac1() {
     const {value} = document.getElementById('ac')
     setac(value)
   }
+
+
   function setpa1() {
     const {value} = document.getElementById('pa')
     setpa(value)
   }
+
+
   async function login () {
     axios.get('http://localhost:8080/login',{
       params : {
@@ -44,6 +51,8 @@ const Login = () => {
     })
     console.log(String(ac))
   }
+
+  
     return (
         <div className={s.all}>
             <div className={s.login}>Login</div>

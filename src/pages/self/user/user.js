@@ -13,10 +13,14 @@ import {
   SetOutline,
 } from 'antd-mobile-icons'
 const Message = () => {
-  const userid = user((state) => state.userid)
-  const [me,setme] = useState({})
+
+  const userid = user((state) => state.userid) //获取用户ID
+  const [me,setme] = useState({}) //设置我的信息
+
+
   useEffect(() => {
-    async function getuser() {                           //通过用户姓名拿到用户信息
+
+    async function getuser() {                           //通过用户ID拿到用户信息
     const { data } = await javar.get('/user',{
       params: {
         id: String(userid)
@@ -26,10 +30,15 @@ const Message = () => {
   }
   getuser()
   },[me])
-  const navigate = useNavigate()
-  function pushIntro() {
+
+
+  const navigate = useNavigate() //路由
+
+  function pushIntro() { //跳转路由
     navigate('/intro')
   }
+
+
     return (
         <div>
             <div className={s.back}>

@@ -10,7 +10,7 @@ $backcolor: #f5f5f5;
 }
 .top_left{
     height:100%;
-    width:80px;
+    width:20%;
     text-align: center;
     line-height: 60px;
     float: left;
@@ -25,20 +25,20 @@ $backcolor: #f5f5f5;
     text-align: center;
     position: relative;
     top:15px;
-    width:270px;
+    width:60%;
 }
 .adm_radio_content{
     font-size:13px;
 }
 .top_right{
     float: left;
-    width:80px;
+    width:20%;
     height:100%;
     font-size:18px;
 }
 .top_icon{
     margin-top: 21px;
-    margin-left:14.7px;
+    margin-left:20%;
 }
 .sec_top_all{
     width:100%;
@@ -46,16 +46,16 @@ $backcolor: #f5f5f5;
     background-color: $backcolor;
 }
 .sec_top_button{
-    width:60px;
-    height:40px;
+    width:14%;
+    height:61%;
     float: left;
-    margin-left:21.7px;
+    margin-left:5%;
     margin-top:20px;
 }
 .sec_top_text{
     float: left;
-    width:60px;
-    margin-left:21.7px;
+    width:14%;
+    margin-left:5%;
     text-align: center;
 }
 .sec_top_textall{
@@ -68,9 +68,9 @@ $backcolor: #f5f5f5;
 .mid_module{
     background-color: white;
     height:240px;
-    width:190px;
+    width:44%;
     float: left;
-    margin-left:16.7px;
+    margin-left:4%;
     margin-bottom:20px;
     border:1px solid black;
     border-radius: 5%;

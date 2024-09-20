@@ -12,10 +12,11 @@ import Chat from '../pages/chat/chat.js'
 import ChangeName from '../pages/self/introa/changename/changename.js'
 import { createBrowserRouter } from 'react-router-dom'
 const router = createBrowserRouter([
+    {path: '/',element: <Index />},
     {path: '/index', element: <Index />, children:[
         {path: 'user', element: <User />},
         {path: 'layout', element: <Layout />},
-        {path: 'function', element: <Function />}
+        {path: 'function', element: <Function />},
     ]},
     {path: '/details', element: <Details />},
     {path: '/intro', element: <Intro />},
