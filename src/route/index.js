@@ -1,7 +1,7 @@
 import Index from '../pages/index/index.js'
 import User from '../pages/self/user/user.js'
-import Layout from '../pages/layout/layout.js'
-import Function from '../pages/function/function.js'
+import Aboutme from '../pages/aboutme/aboutme.js'
+// import Function from '../pages/function/function.js'
 import Details from '../pages/details/details.js'
 import Intro from '../pages/self/introa/intro/intro.js'
 import Set from '../pages/self/set/set.js'
@@ -12,11 +12,11 @@ import Chat from '../pages/chat/chat.js'
 import ChangeName from '../pages/self/introa/changename/changename.js'
 import { createBrowserRouter } from 'react-router-dom'
 const router = createBrowserRouter([
-    {path: '/',element: <Index />},
+    {path: '/',element: <Aboutme />},
     {path: '/index', element: <Index />, children:[
         {path: 'user', element: <User />},
-        {path: 'layout', element: <Layout />},
-        {path: 'function', element: <Function />},
+        {path: 'aboutme', element: <Aboutme />},
+        // {path: 'function', element: <Function />},
     ]},
     {path: '/details', element: <Details />},
     {path: '/intro', element: <Intro />},

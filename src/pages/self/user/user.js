@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import s from './user.module.scss'
-import { List,  Avatar } from 'antd-mobile'
+import { List,  Avatar, Skeleton } from 'antd-mobile'
 import { UserContactOutline,
 FileOutline,
 StarOutline
@@ -16,20 +16,23 @@ const Message = () => {
 
   const userid = user((state) => state.userid) //获取用户ID
   const [me,setme] = useState({}) //设置我的信息
+  const [isget,setisget] = useState(false)
 
 
   useEffect(() => {
 
-    async function getuser() {                           //通过用户ID拿到用户信息
+    async function getuser() {                         //通过用户ID拿到用户信息
     const { data } = await javar.get('/user',{
       params: {
         id: String(userid)
       }
     })
     setme(data[0])
+    setisget(true)
   }
-  getuser()
-  },[me])
+    getuser()
+
+  },[])
 
 
   const navigate = useNavigate() //路由
@@ -40,17 +43,22 @@ const Message = () => {
 
 
     return (
-        <div>
+        <div className={s.zong}>
             <div className={s.back}>
         <div className={s.all}>
-            <List >
+          <div id="show" className={s.list}>
+            <List>
           <List.Item
             prefix={<Avatar src='' />}
-            description={me.intro}
+            description={isget ? me.intro : 'null'}
           >
-            {me.username}
+            {/* <div id="load">
+        <Skeleton animated className={s.customSkeleton}/>
+        </div> */}
+            { isget ? me.username : <Skeleton animated className={s.customSkeleton}/>}
           </List.Item>
         </List>
+        </div>
         <div className={s.sec}>
          <List header=''>
             <List.Item prefix={<UserContactOutline />} onClick={() => pushIntro()}>

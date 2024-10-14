@@ -1,0 +1,87 @@
+.top{
+    height:7%;
+    width:100%;
+    background-color: white;
+    position: fixed;
+    border-bottom:solid 2px #f5f5f5;
+}
+.all{
+    height:100%;
+    width:100%;
+    position: absolute;
+}
+.me{
+    height:100%;
+    width:30%;
+    display: flex;
+    float: left;
+    z-index:1;
+}
+img{
+    height:100%;
+    width:100%;
+}
+.close{
+    height:20px;
+    width:100%;
+}
+.closeicon{
+    float: right;
+    width:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pop{
+    width:100%;
+    height:96%;
+    background-color: white;
+    position: fixed;
+    opacity: 0;
+    transition:0.6s;
+}
+.active{
+    opacity: 1;
+}
+.img{
+    height:35px;
+    width:45px;
+    float: left;
+    align-self: center;
+    margin-left:20px;
+    border-radius: 50%;
+}
+.avator{
+    border-radius: 50%;
+}
+.toptext{
+    font-size:18px;
+    font-weight:600;
+    width:70%;
+    float: left;
+    align-self: center;
+}
+.topright{
+    width:20%;
+    height:100%;
+    font-size:18px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item{
+    height:50px;
+    width:50%;
+    display: flex;
+    align-items: center;
+    border-bottom:solid 2px #f5f5f5;
+    font-weight:550;
+    font-size:15px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

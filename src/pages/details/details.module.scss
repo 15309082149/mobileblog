@@ -2,6 +2,7 @@
     width:400px;
     margin-left:15px;
     overflow: hidden;
+    height:80%;
 }
 .title{
     font: {
@@ -11,6 +12,16 @@
     text-align: center;
     word-wrap:break-word;
 }
+.zw{
+    height:70px;
+    width:100%;
+}
+.all{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
 .load{
     text-align: center;
     line-height:100px;
@@ -18,7 +29,7 @@
 .bottom{
     width:100%;
     height:60px;
-    position: absolute;
+    // position: absolute;
     bottom:0px;
     position: fixed;
     background-color: white;

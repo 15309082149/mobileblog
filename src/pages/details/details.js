@@ -42,7 +42,7 @@ const Details = () => {
     async function getuser() {                                 //保证评论功能根据用户查找，以实现用户与各自评论对应
       const { data } = await javar.get('/user',{
         params: {
-          id: String(userid)
+          id: String(userid)  //userid是从本地仓库拿出的id
         }
       })
       setme(data[0].id)
@@ -170,7 +170,7 @@ const Details = () => {
     const [swipe,setswipe] = useState(true)
 
     return (
-        <div>
+        <div className={s.all}>
             <NavBar right={right} onBack={back}>
           文章详情
         </NavBar>
@@ -180,6 +180,7 @@ const Details = () => {
         <div className={s.detail} id='po'>
             {/* <ReactMarkdown children={content}></ReactMarkdown> */}
         </div>
+        <div className={s.zw}></div>
         <div className={s.bottom}>
             <div className={s.good}>
                 <div className={s.lefticon} onClick={()=>{likes()}}><LikeOutline /><div className={s.likesnum}>{like}</div></div>
