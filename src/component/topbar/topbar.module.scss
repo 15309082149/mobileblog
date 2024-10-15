@@ -1,9 +1,10 @@
 .top{
-    height:7%;
+    height:70px;
     width:100%;
     background-color: white;
     position: fixed;
     border-bottom:solid 2px #f5f5f5;
+    z-index:2;
 }
 .all{
     height:100%;
@@ -37,8 +38,10 @@ img{
     height:96%;
     background-color: white;
     position: fixed;
-    opacity: 0;
-    transition:0.6s;
+    visibility: 0;
+    opacity:0 ;
+    transition: 0.6s;
+    z-index:2;
 }
 .active{
     opacity: 1;

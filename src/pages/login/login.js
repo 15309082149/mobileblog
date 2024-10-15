@@ -42,7 +42,7 @@ const Login = () => {
          }).then(result=>{
           setid(result.data)
         })
-         navigate('/index/layout')
+         navigate('/index/aboutme')
        }
        else {
          const error = document.getElementById('notice')

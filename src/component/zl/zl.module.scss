@@ -1,0 +1,40 @@
+.smallzl{
+    margin-top:15px;
+    width:90%;
+    height:60px;
+    // background-color: #2dd2c1;
+    border-radius:15px;
+    transition: 0.6s;
+}
+.smallzltext{
+    float: left;
+    font-size:18px;
+    color:white;
+    font-weight:550;
+    margin-left:10px;
+    margin-top:15px;
+}
+.righticon{
+    float: right;
+    font-size:18px;
+    color:white;
+    margin-right:15px;
+    margin-top:15px;
+}
+.icon{
+    transition:all,0.6s;
+}
+.introduce{
+    width:100%;
+    float: left;
+    color:white;
+    margin:10px;
+    opacity: 0;
+    transition: 0.6s;
+}
+.all{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}

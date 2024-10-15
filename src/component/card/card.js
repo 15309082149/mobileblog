@@ -9,6 +9,8 @@ const Card = () => {
               </div>
               <div className={s.textarea}>
                 <table className={s.table}>
+                  <thead></thead>
+                  <tbody>
                   <tr>
                   <th>Base</th>
                   <th>Direction</th>
@@ -17,6 +19,7 @@ const Card = () => {
                     <td>成都</td>
                     <td>前端开发</td>
                   </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

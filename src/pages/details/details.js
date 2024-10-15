@@ -5,9 +5,12 @@ import { MoreOutline,LikeOutline, HeartOutline, MessageOutline, HeartFill } from
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import request from '../../utils/request.js'
 import javar from '../../utils/javar.js'
+import MDEditor from '@uiw/react-md-editor'
  import user from '../../store/user.js'
 const Details = () => {
     window.scrollTo(0, 0);
+    const [params] = useSearchParams()
+    let id = params.get('id')
     const navigate = useNavigate()
     const [content,setcontent] = useState() //文章内容
     const [title,settitle] = useState()  //文章标题和内容单独设置，弥补MD标题转换为HTML不足
@@ -65,38 +68,39 @@ const Details = () => {
     useEffect(()=> {
 
         async function get() {                                 //文章详情页渲染
-            const data = await request.get('/opp',{
+            const data = await javar.get('/findblog',{
                 params: {
                     id: id
                 }
             })
+            setcontent(data.data.content)
             const data2 = await request.get('/title',{
                 params: {
                     id: id
                 }
             })
             settitle(data2.data[0].title)
-            setcontent(data.data[0].content)
-            const html = document.getElementById('po')
-            if(content&&title){
-                const load1 = document.getElementById('load1')
-                if(load1){
-                load1.style.display = 'none'
-                html.innerHTML = content
-                }}
-            const img = document.querySelectorAll("img")
-              img.forEach(e=>{
-                  e.style.position = 'static'
-                  e.style.width = '430px'
-                 })
-            const load = document.getElementById('load')
-            load.style.display = 'none'
+            // setcontent(data.data[0].content)
+            // const html = document.getElementById('po')
+            // if(content&&title){
+            //     const load1 = document.getElementById('load1')
+            //     if(load1){
+            //     load1.style.display = 'none'
+            //     html.innerHTML = content
+            //     }}
+            // const img = document.querySelectorAll("img")
+            //   img.forEach(e=>{
+            //       e.style.position = 'static'
+            //       e.style.width = '430px'
+            //      })
+            // const load = document.getElementById('load')
+            // load.style.display = 'none'
         }
 
 
         get()
 
-    })
+    },[])
 
 
     const [loves,setloves] = useState(true)
@@ -105,9 +109,6 @@ const Details = () => {
         setloves(!loves)
     }
 
-    const [params] = useSearchParams()
-
-    let id = params.get('id')
 
     const back = () =>                                       //顶部返回功能
     {
@@ -177,7 +178,8 @@ const Details = () => {
         <div className={s.title}>{title}
         <div id='load'><DotLoading/></div></div>
         <div id='load1' className={s.load}><DotLoading/></div>
-        <div className={s.detail} id='po'>
+        <div className={s.detail}>
+          <MDEditor.Markdown source={content}></MDEditor.Markdown>
             {/* <ReactMarkdown children={content}></ReactMarkdown> */}
         </div>
         <div className={s.zw}></div>

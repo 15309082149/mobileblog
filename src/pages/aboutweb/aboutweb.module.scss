@@ -1,0 +1,42 @@
+.all{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zw{
+    height:70px;
+    width:100%;
+}
+.mode{
+    width:80%;
+    height:120px;
+    background-color: #f5f5f5;
+}
+.award{
+    width:80%;
+    margin-top:15px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+}
+.awards{
+    width:100%;
+    height:40px;
+    display: flex;
+    align-items: center;
+    margin-left:15px;
+}
+.topiconarea{
+    height:20px;
+    width:100%;
+    padding:5px;
+    font-size:20px;
+    display: flex;
+}
+.iconatext{
+    font-size:14px;
+    font-weight:550;
+    display: flex;
+    align-items: center;
+}

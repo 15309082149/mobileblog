@@ -1,0 +1,83 @@
+.zw{
+    height:70px;
+    width:100%;
+}
+.blogsymbol{
+    height:200px;
+    width:80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:40px;
+    font-weight:700;
+    font-style:italic;
+}
+.all{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index:1;
+    position: absolute;
+    width:100%;
+
+}
+.myblogs{
+    background:linear-gradient(to right,#37bef6,#2dd2c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title{
+    font-size:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:solid 5px #2dd2c1;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.zl{
+    margin-left:10px;
+    font-weight:600;
+}
+.blogs{
+    width:90%;
+    height:100px;
+    background-color: #f5f5f5;
+    margin-bottom:15px;
+    border-radius: 15px;
+    border:solid 1px #e5e7eb; 
+}
+.blogtitle{
+    font-size:17px;
+    height:50%;
+    align-content: center;
+    width:70%;
+    padding-left:15px;
+    float: left;
+    font-weight:600;
+    overflow: hidden;
+}
+.blogtext{
+    height:50%;
+    margin-left:15px;
+    width:40%;
+    float: left;
+}
+.time{
+    height:50%;
+    width:25%;
+    float: left;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+.tag{
+    height:50%;
+    width:50%;
+    float: left;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

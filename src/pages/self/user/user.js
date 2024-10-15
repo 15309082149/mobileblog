@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import s from './user.module.scss'
-import { List,  Avatar, Skeleton } from 'antd-mobile'
+import { List} from 'antd-mobile'
 import { UserContactOutline,
 FileOutline,
 StarOutline
@@ -46,19 +46,7 @@ const Message = () => {
         <div className={s.zong}>
             <div className={s.back}>
         <div className={s.all}>
-          <div id="show" className={s.list}>
-            <List>
-          <List.Item
-            prefix={<Avatar src='' />}
-            description={isget ? me.intro : 'null'}
-          >
-            {/* <div id="load">
-        <Skeleton animated className={s.customSkeleton}/>
-        </div> */}
-            { isget ? me.username : <Skeleton animated className={s.customSkeleton}/>}
-          </List.Item>
-        </List>
-        </div>
+          <div className={s.zw}> </div>
         <div className={s.sec}>
          <List header=''>
             <List.Item prefix={<UserContactOutline />} onClick={() => pushIntro()}>
