@@ -2,7 +2,9 @@ import s from './zl.module.scss'
 import { useState } from 'react'
 import { AddOutline } from 'antd-mobile-icons'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 const Zl = () => {
+    const navigate = useNavigate()
     const zlarray = [
         {title: 'Vue源码解析',content:'最近为了深入研究Vue框架而写的源码解析',color:'#37bef6',zlid:'zl1',inid:'in1',iconid:'icon1',iskai:false},
         {title: '学习笔记',content:'从开始学习软件到现在所有的学习笔记',color:'#2ed0c5',zlid:'zl2',inid:'in2',iconid:'icon2',iskai:false},
@@ -55,12 +57,15 @@ const Zl = () => {
             default: console.log('error')
         }
     }
+    function fl(title) {
+        navigate(`/index/column?fl=${title}`)
+    }
     return(
         <div className={s.all}>
             {zlarray.map((item,index) => {
                     return(
                     <div className={s.smallzl} style={{background: item.color}} id={item.zlid} key={index}>
-                      <div className={s.smallzltext}>{item.title}</div>
+                      <div className={s.smallzltext} onClick={()=>{fl(item.title)}}>{item.title}</div>
                       <div className={s.righticon} onClick={() => {zhankai(item.zlid,item.inid,item.iconid,index)}}><AddOutline id={item.iconid} className={s.icon}/></div>
                       <div className={s.introduce} id={item.inid}>{item.content}</div>
                     </div>

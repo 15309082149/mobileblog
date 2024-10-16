@@ -6,6 +6,7 @@ import Details from '../pages/details/details.js'
 import Intro from '../pages/self/introa/intro/intro.js'
 import Aboutweb from '../pages/aboutweb/aboutweb.js'
 import Set from '../pages/self/set/set.js'
+import Column from '../pages/column/column.js'
 import Blogs from '../pages/blogs/blogs.js'
 import Editor from '../pages/editor/editor.js'
 import Login from '../pages/login/login.js'
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
         {path: 'user', element: <User />},
         {path: 'aboutme', element: <Aboutme />},
         {path: 'blogs', element: <Blogs />},
-        {path: 'aboutweb', element: <Aboutweb />}
+        {path: 'aboutweb', element: <Aboutweb />},
+        {path: 'column', element: <Column />}
         // {path: 'function', element: <Function />},
     ]},
     {path: '/editor',element:<Editor />},

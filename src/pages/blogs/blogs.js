@@ -37,7 +37,7 @@ const Blogs = () => {
                 <div className={s.zl}>近期更新</div></div>
                 {Array.isArray(blog) && blog.map((item,index)=> {
                     return(
-                    <div className={s.blogs} onClick={() => {navi(item.id)}}>
+                    <div className={s.blogs} onClick={() => {navi(item.id)}} key={index}>
                     <div className={s.blogtitle}>{item.title}</div>
                     <div className={s.time}>{item.time}</div>
                     <div className={s.blogtext}>{item.text}</div>

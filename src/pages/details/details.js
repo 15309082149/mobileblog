@@ -6,9 +6,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import request from '../../utils/request.js'
 import javar from '../../utils/javar.js'
 import MDEditor from '@uiw/react-md-editor'
+import End from '../../component/end/end.js'
  import user from '../../store/user.js'
 const Details = () => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const [params] = useSearchParams()
     let id = params.get('id')
     const navigate = useNavigate()
@@ -74,20 +75,21 @@ const Details = () => {
                 }
             })
             setcontent(data.data.content)
-            const data2 = await request.get('/title',{
-                params: {
-                    id: id
-                }
-            })
-            settitle(data2.data[0].title)
+            // const data2 = await request.get('/title',{
+            //     params: {
+            //         id: id
+            //     }
+            // })
+            // settitle(data2.data[0].title)
             // setcontent(data.data[0].content)
             // const html = document.getElementById('po')
-            // if(content&&title){
-            //     const load1 = document.getElementById('load1')
-            //     if(load1){
-            //     load1.style.display = 'none'
-            //     html.innerHTML = content
-            //     }}
+            if(content){
+                const load1 = document.getElementById('load1')
+                console.log('1')
+                if(load1){
+                load1.style.display = 'none'
+            
+                }}
             // const img = document.querySelectorAll("img")
             //   img.forEach(e=>{
             //       e.style.position = 'static'
@@ -100,7 +102,7 @@ const Details = () => {
 
         get()
 
-    },[])
+    },[content])
 
 
     const [loves,setloves] = useState(true)
@@ -175,13 +177,13 @@ const Details = () => {
             <NavBar right={right} onBack={back}>
           文章详情
         </NavBar>
-        <div className={s.title}>{title}
-        <div id='load'><DotLoading/></div></div>
+        <div className={s.title}>{title}</div>
         <div id='load1' className={s.load}><DotLoading/></div>
         <div className={s.detail}>
           <MDEditor.Markdown source={content}></MDEditor.Markdown>
             {/* <ReactMarkdown children={content}></ReactMarkdown> */}
         </div>
+        <End></End>
         <div className={s.zw}></div>
         <div className={s.bottom}>
             <div className={s.good}>
