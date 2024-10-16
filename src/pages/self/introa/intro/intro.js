@@ -1,4 +1,4 @@
-
+import { Toast } from 'antd-mobile'
 import { NavBar } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 import { List } from 'antd-mobile'
@@ -9,6 +9,16 @@ import javar from '../../../../utils/javar.js'
 const Intro = () => {
   const [me,setme] = useState({})
   const userid = user((state) => state.userid)
+  function change(e) {
+    if(userid === 1) {
+      Toast.show({
+        content: '游客无法修改个人信息！'
+      })
+    }
+    else {
+      navigate(e)
+    }
+  }
   useEffect(() => {                                                 //拿到用户信息
           async function getuser() {
     const { data } = await javar.get('/user',{
@@ -19,7 +29,7 @@ const Intro = () => {
     setme(data[0])
   }
   getuser()
-  },[me])
+  },[])
     const navigate = useNavigate()
     const back = () =>
     {
@@ -31,16 +41,16 @@ const Intro = () => {
           个人信息
         </NavBar>
          <List header='账号信息'>
-        <List.Item  onClick={() => {navigate('/changename')}} extra={me.username}>
+        <List.Item  onClick={() => {change('/changename')}} extra={me.username}>
           用户姓名
         </List.Item>
-        <List.Item  onClick={() => {navigate('/changein')}} extra={me.intro}>
+        <List.Item  onClick={() => {change('/changein')}} extra={me.intro}>
           用户简介
         </List.Item>
         <List.Item  extra={me.account}>
           账号
         </List.Item>
-        <List.Item  onClick={() => {navigate('/changepass')}} extra='点击修改'>
+        <List.Item  onClick={() => {change('/changepass')}} extra='点击修改'>
           修改密码
         </List.Item>
         <List.Item extra='123456'>

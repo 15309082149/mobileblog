@@ -1,6 +1,6 @@
 import s from './aboutweb.module.scss'
 import { KoubeiOutline} from 'antd-mobile-icons'
-import End from '../../component/end/end'
+import End from '../../../component/end/end'
 const Aboutweb = () => {
     return (
         <div className={s.all}>

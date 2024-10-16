@@ -17,7 +17,9 @@ const Message = () => {
   const userid = user((state) => state.userid) //获取用户ID
   const [me,setme] = useState({}) //设置我的信息
   const [isget,setisget] = useState(false)
-
+  function gode() {
+    navigate('/index/developing')
+  }
 
   useEffect(() => {
 
@@ -52,13 +54,13 @@ const Message = () => {
             <List.Item prefix={<UserContactOutline />} onClick={() => pushIntro()}>
           个人信息
         </List.Item>
-        <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
+        <List.Item prefix={<UnorderedListOutline />} onClick={() => {gode()}}>
           联系作者
         </List.Item>
-        <List.Item prefix={<FileOutline />} onClick={() => {}}>
+        <List.Item prefix={<FileOutline />} onClick={() => {gode()}}>
           我的评论
         </List.Item>
-        <List.Item prefix={<StarOutline />} onClick={() => {}}>
+        <List.Item prefix={<StarOutline />} onClick={() => {gode()}}>
           我的收藏
         </List.Item>
         <List.Item prefix={<SetOutline />} onClick={() => {navigate('/set')}}>

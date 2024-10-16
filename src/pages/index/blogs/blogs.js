@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import s from './blogs.module.scss'
-import Zl from '../../component/zl/zl'
+import Zl from '../../../component/zl/zl'
 import { Tag } from 'antd-mobile'
-import End from '../../component/end/end'
-import javar from '../../utils/javar'
+import End from '../../../component/end/end'
+import javar from '../../../utils/javar'
 import { useNavigate } from 'react-router-dom'
 const Blogs = () => {
     const navigate = useNavigate()

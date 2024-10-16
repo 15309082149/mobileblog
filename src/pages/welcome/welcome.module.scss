@@ -1,0 +1,73 @@
+.all{
+    width:100%;
+    height:100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* 背景尺寸 - 原理3 */
+    background-size: 600% 600%;
+    /* 循环动画 - 原理4 */
+    animation: gradientBG 10s ease infinite;
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+.wel{
+    font-size:50px;
+    margin-top:-40px;
+    margin-bottom:20px;
+    font-weight:700;
+    font-family:STHupo;
+    background:linear-gradient(to right,orange,white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card{
+    width:80%;
+    height:30%;
+    opacity: .7;
+    background-color: white;
+    border-radius: 15px;
+    border:solid 1px orange;
+}
+.toptext{
+    font-size:23px;
+    font-weight:700;
+    color:black;
+    width:100%;
+    height:50%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+.bottomb{
+    width:100%;
+    height:50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.button{
+    margin-left:13%;
+    width:30%;
+    height:30%;
+    background-color: rgb(240, 231, 241);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:purple;
+    font-weight:600;
+    border:solid 1px orange;
+}

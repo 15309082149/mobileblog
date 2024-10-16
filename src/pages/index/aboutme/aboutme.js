@@ -2,32 +2,30 @@
 import React, { useEffect, useState, useRef } from 'react'
 import s from './aboutme.module.scss'
 import { MessageOutline, AppOutline, KoubeiOutline, TravelOutline, GlobalOutline } from 'antd-mobile-icons'
-import Topbar from '../../component/topbar/topbar'
-import Card from '../../component/card/card'
-import Smode from '../../component/smode/smode'
+import Card from '../../../component/card/card'
 import { Swiper } from 'antd-mobile'
-import End from '../../component/end/end'
+import End from '../../../component/end/end'
 const Aboutme = () => {
   const stackarray = [
-    {  url: require('../../img/stackimg/vue.jpeg'),
+    {  url: require('../../../img/stackimg/vue.jpeg'),
        name: 'Vue'
     },
-    {url: require('../../img/stackimg/react.jpeg'),
+    {url: require('../../../img/stackimg/react.jpeg'),
       name: 'React'
     },
-    {url: require('../../img/stackimg/node.jpeg'),
+    {url: require('../../../img/stackimg/node.jpeg'),
       name: 'Node.js'
     },
-    {url: require('../../img/stackimg/css.jpeg'),
+    {url: require('../../../img/stackimg/css.jpeg'),
       name: 'Css'
     },
-    {url: require('../../img/stackimg/html.jpeg'),
+    {url: require('../../../img/stackimg/html.jpeg'),
       name: 'Html'
     },
-    {url: require('../../img/stackimg/ts.jpeg'),
+    {url: require('../../../img/stackimg/ts.jpeg'),
       name: 'Typescript'
     },
-    {url: require('../../img/stackimg/js.jpeg'),
+    {url: require('../../../img/stackimg/js.jpeg'),
       name: 'Javascript'
     }
   ]

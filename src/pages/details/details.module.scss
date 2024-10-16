@@ -1,6 +1,6 @@
 .detail{
-    width:400px;
-    margin-left:15px;
+    width:92%;
+    align-self: center;
     overflow: hidden;
     height:80%;
 }
@@ -11,6 +11,25 @@
     };
     text-align: center;
     word-wrap:break-word;
+}
+.enddetail{
+    margin-top:30px;
+    width:90%;
+    height:50px;
+    align-self: center;
+}
+.entexts{
+    display: flex;
+    align-items: center;
+}
+.entext{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight:600;
+    height:50%;
+    width:100%;
+    font-size:15px;
 }
 .zw{
     height:70px;
@@ -124,30 +143,28 @@
 .pl_bottom{
     width:100%;
     height:60px;
+    display: flex;
     position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     bottom:0px;
 }
 .pl_input{
-    margin-left:40px;
     float: left;
-    margin-top:10px;
-    width:340px;
+    width:70%;
 }
 .pl_mod_avator1{
     width:30px;
     height:30px;
     background-color: green;
     border-radius: 100%;
-    position: absolute;
-    left:5px;
-    top:7px;
 }
 .send{
     display:block;
     float:left;
-    width:50px;
+    width:20%;
     font-size:12px;
-    margin-top:10px;
 }
 .bigmod{
     max-height:700px;
