@@ -22,7 +22,7 @@ const Editor = () => {
         if(title&&value&&text&&fl&&time) {
             axios({
                 method: 'post',
-                url:'http://47.96.39.47:8080/addblog',
+                url:'http://127.0.0.1:8080/addblog',
                 data: {
                 title: title,
                 text: text,

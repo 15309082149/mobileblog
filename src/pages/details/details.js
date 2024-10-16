@@ -138,6 +138,18 @@ const Details = () => {
   const [value, setValue] = useState('')
 
   function sendmessage() {
+        if(me === 1) {
+          Toast.show({
+            content:"未登录无法发表评论!"
+          })
+          return
+        }
+        if(value === '') {
+          Toast.show({
+            content:"评论不能为空！"
+          })
+          return
+        }
         let date = new Date()
         javar.get('/sendmessage',{                                  //发送评论需要用户对应
           params: {
@@ -226,7 +238,7 @@ const Details = () => {
               onClose={() => {
                 setVisible1(false)
               }}
-              bodyStyle={{ height: '800px'}}
+              bodyStyle={{ height: '80%'}}
             >
               <div className={s.pl_top}>查看全部{pre.length}条评论</div>
               <div className={s.bigmod}>
@@ -239,7 +251,6 @@ const Details = () => {
                 <div className={s.pl_time}>{item.time}</div>
               </div>)}</div>
               <div className={s.pl_bottom}>
-                <div className={s.pl_mod_avator1}></div>
                 <Input
           className={s.pl_input}
           placeholder='写评论...'
