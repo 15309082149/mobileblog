@@ -1,7 +1,7 @@
 import axios from 'axios'   //废弃了这个B东西
     // let jwtToken = window.localStorage.getItem('jwttoken')
 const instance = axios.create({
-  baseURL: 'http://127.0.0.1:8090',
+  baseURL: 'http://47.96.39.47:8090',
   timeout: 100000,  headers: ( 
     {'X-Custom-Header': 'foobar'},
   {"Content-Type":"application/json"}

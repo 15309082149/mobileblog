@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import javar from '../../utils/javar'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Tag, ErrorBlock } from 'antd-mobile'
+import End from '../../component/end/end'
 import Topback from '../../component/topback/topback'
 const Column = () => {
     const [blog,setblog] = useState()
@@ -47,6 +48,7 @@ const Column = () => {
                 </div>
                     )
                 })}
+                <End></End>
         </div>
     )
 }
