@@ -6,6 +6,7 @@ import Welcome from '../pages/welcome/welcome.js'
 import Details from '../pages/details/details.js'
 import Intro from '../pages/self/introa/intro/intro.js'
 import Aboutweb from '../pages/index/aboutweb/aboutweb.js'
+import Projects from '../pages/projects/projects.js'
 import Rain from '../pages/vfx/rain/rain.js'
 import Vfxli from '../pages/vfx/vfxli/vfxli.js'
 import Set from '../pages/self/set/set.js'
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
         {path: 'vfxli', element: <Vfxli />},
         {path: 'rain', element:<Rain />},
         {path: 'change', element: <Change />},
+        {path: 'projects', element: <Projects />},
         // {path: 'function', element: <Function />},
     ]},
     {path: '/welcome', element:<Welcome />},

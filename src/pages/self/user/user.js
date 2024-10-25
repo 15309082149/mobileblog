@@ -12,6 +12,7 @@ import {
   UnorderedListOutline,
   SetOutline,
 } from 'antd-mobile-icons'
+import Loading from '../../../component/loading/loading.js'
 const Message = () => {
 
   const userid = user((state) => state.userid) //获取用户ID
@@ -46,6 +47,7 @@ const Message = () => {
 
     return (
         <div className={s.zong}>
+          <Loading />
             <div className={s.back}>
         <div className={s.all}>
           <div className={s.zw}> </div>

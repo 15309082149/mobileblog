@@ -1,0 +1,12 @@
+:root{
+    --bcgcolor:white;
+    --textcolor:black;
+    --mdbcg:#f5f5f5;
+}
+
+html[data-theme="dark"] {
+
+    --bcgcolor:#1b1b1f;
+    --mdbcg:#1e293b;
+    --textcolor:white;
+}

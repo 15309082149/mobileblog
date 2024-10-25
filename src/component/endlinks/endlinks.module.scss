@@ -41,9 +41,9 @@
     height:30px;
     transition: .3s;
     border-radius: 50%;
-    background-color: #363636;
+    background-color: var(--textcolor);
     font-size:13px;
-    color:white;
+    color:var(--bcgcolor);
     display: flex;
     justify-content: center;
     align-items: center;

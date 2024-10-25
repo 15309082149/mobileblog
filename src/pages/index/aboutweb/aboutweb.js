@@ -1,9 +1,11 @@
 import s from './aboutweb.module.scss'
 import { KoubeiOutline} from 'antd-mobile-icons'
 import End from '../../../component/end/end'
+import Loading from '../../../component/loading/loading'
 const Aboutweb = () => {
     return (
         <div className={s.all}>
+          <Loading />
             <div className={s.zw}></div>
             <div className={s.award}>
               <div className={s.topiconarea}>

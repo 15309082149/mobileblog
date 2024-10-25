@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
  import { Popup,Dropdown } from 'antd-mobile'
  import { useNavigate } from 'react-router-dom'
  import s from './topbar.module.scss'
+ import Theme from '../theme/theme'
  const Topbar = () => {
     const navigate = useNavigate()
     function setv(e) {
@@ -26,10 +27,11 @@ import React, { useEffect, useState, useRef } from 'react'
             <div className={s.metopright}>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutme');setv(0)}}>About Clarca</div>
                 <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
-                <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>Projects</div>
+                {/* <div className={s.item} onClick={()=>{navigate('/index/projects');setv(0)}}>Projects</div> */}
                 <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs</div>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About website</div>
-                <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div>
+                <div className={s.item}>主题切换<Theme></Theme></div>
+                {/* <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div> */}
             </div>
             <div className={s.topright} onClick={() =>setv(1)}>
                 <UnorderedListOutline></UnorderedListOutline>
@@ -45,7 +47,8 @@ import React, { useEffect, useState, useRef } from 'react'
                 <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
                 <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs(一些CSS特效)</div>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About this website</div>
-                <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div>
+                {/* <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div> */}
+                <div className={s.item}>主题切换<Theme></Theme></div>
             </div>
           </div>
           </div>

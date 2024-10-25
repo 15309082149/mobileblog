@@ -78,13 +78,13 @@ const Aboutme = () => {
           clearInterval(t)
         }
     },)
-
-    useEffect(()=> {
-      let index= params.get('index')
-      if(index === null) {
-        document.getElementById('load').style.display = "none"
-      }
-    },[])
+    
+    // useEffect(()=> {
+    //   let index= params.get('index')
+    //   if(index === null) {
+    //     document.getElementById('load').style.display = "none"
+    //   }
+    // },[])
     return (
         <div className={s.all}>
           <div id="load">
@@ -120,6 +120,7 @@ const Aboutme = () => {
             </div>
             <div className={s.stack}>
               <div className={s.topiconarea}><AppOutline/><div className={s.iconatext}>Tech stacks</div></div>
+              <div className={s.stacks}>
               {/* <div className={s.stackzw}></div> */}
               {stackarray.map((item,index) => {
                 return (
@@ -130,6 +131,7 @@ const Aboutme = () => {
 
                 )
               })}
+              </div>
             </div>
             </div>
             <div className={s.media3}>

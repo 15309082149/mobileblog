@@ -45,6 +45,11 @@ const Details = () => {
 
 
     useEffect(() => {
+      // const theme = localStorage.getItem('theme')
+      // if(theme === 'dark') {
+      //   console.log(document.getElementById('bcg'))
+      //   document.getElementById('bcg').style.removeProperty("background")
+      // }
 
     async function getuser() {                                 //保证评论功能根据用户查找，以实现用户与各自评论对应
       const { data } = await javar.get('/user',{
@@ -202,11 +207,11 @@ const Details = () => {
           <Topbar></Topbar>
           <div style={{height:'70px'}}></div>
             <Topback></Topback>
-        <div className={s.bcg}></div>
+        <div className={s.bcg} id="bcg"></div>
         {/* <div className={s.title}>{title}</div> */}
         {/* <div id='load1' className={s.load}><DotLoading/></div> */}
         <div className={s.detail}>
-          <MDEditor.Markdown source={content}></MDEditor.Markdown>
+          <MDEditor.Markdown source={content} className={s.markd}></MDEditor.Markdown>
             {/* <ReactMarkdown children={content}></ReactMarkdown> */}
         </div>
         <div className={s.enddetail}>

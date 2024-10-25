@@ -1,5 +1,6 @@
 
 import style from './index.module.scss'
+import './style/theme.scss'
 function App() {
 
   return (
