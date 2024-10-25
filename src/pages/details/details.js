@@ -8,6 +8,8 @@ import javar from '../../utils/javar.js'
 import MDEditor from '@uiw/react-md-editor'
 import End from '../../component/end/end.js'
  import user from '../../store/user.js'
+import Topbar from '../../component/topbar/topbar.js'
+import Topback from '../../component/topback/topback.js'
 const Details = () => {
     // window.scrollTo(0, 0);
     const [params] = useSearchParams()
@@ -91,13 +93,13 @@ const Details = () => {
             // settitle(data2.data[0].title)
             // setcontent(data.data[0].content)
             // const html = document.getElementById('po')
-            if(content){
-                const load1 = document.getElementById('load1')
-                console.log('1')
-                if(load1){
-                load1.style.display = 'none'
+            // if(content){
+            //     const load1 = document.getElementById('load1')       //load
+            //     console.log('1')
+            //     if(load1){
+            //     load1.style.display = 'none'
             
-                }}
+            //     }}
             // const img = document.querySelectorAll("img")
             //   img.forEach(e=>{
             //       e.style.position = 'static'
@@ -122,7 +124,10 @@ const Details = () => {
 
     const back = () =>                                       //顶部返回功能
     {
-        navigate(-1)
+      document.getElementById('all').style.opacity = '0'
+      setTimeout(()=>{
+          navigate(-1)
+      },500)
     }
 
      const right = (
@@ -193,12 +198,13 @@ const Details = () => {
     const [swipe,setswipe] = useState(true)
 
     return (
-        <div className={s.all}>
-            <NavBar right={right} onBack={back}>
-          文章详情
-        </NavBar>
+        <div className={s.all} id="all">
+          <Topbar></Topbar>
+          <div style={{height:'70px'}}></div>
+            <Topback></Topback>
+        <div className={s.bcg}></div>
         {/* <div className={s.title}>{title}</div> */}
-        <div id='load1' className={s.load}><DotLoading/></div>
+        {/* <div id='load1' className={s.load}><DotLoading/></div> */}
         <div className={s.detail}>
           <MDEditor.Markdown source={content}></MDEditor.Markdown>
             {/* <ReactMarkdown children={content}></ReactMarkdown> */}

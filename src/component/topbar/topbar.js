@@ -23,7 +23,17 @@ import React, { useEffect, useState, useRef } from 'react'
                 <div className={s.img}><img alt="error" src={require('../../img/ava.png')} className={s.avator}></img></div>
                 <div className={s.toptext}>Clarca</div>
             </div>
-            <div className={s.topright} onClick={() =>setv(1)}><UnorderedListOutline /></div>
+            <div className={s.metopright}>
+                <div className={s.item} onClick={()=>{navigate('/index/aboutme');setv(0)}}>About Clarca</div>
+                <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
+                <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>Projects</div>
+                <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs</div>
+                <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About website</div>
+                <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div>
+            </div>
+            <div className={s.topright} onClick={() =>setv(1)}>
+                <UnorderedListOutline></UnorderedListOutline>
+            </div>
           </div>
           <div style={{height: 70 + 'px'}}></div>
           <div className={s.pop} id="pop">
@@ -33,6 +43,7 @@ import React, { useEffect, useState, useRef } from 'react'
             <div className={s.items}>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutme');setv(0)}}>About Clarca</div>
                 <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
+                <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs(一些CSS特效)</div>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About this website</div>
                 <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div>
             </div>

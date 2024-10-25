@@ -9,7 +9,7 @@ const Welcome = () => {
     }
     function guest() {
         setid(1)
-        navigate('/index/aboutme')
+        navigate('/index/aboutme?index=1')
     }
     return (
         <div className={s.all}>

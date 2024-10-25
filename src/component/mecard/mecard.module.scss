@@ -1,0 +1,30 @@
+.mecard{
+    width:80%;
+    height:200px;
+    display: none;
+    margin-top:15px;
+}
+.ava{
+    width:200px;
+    border-radius: 50%;
+}
+.left,.right{
+    font-size:30px;
+    font-weight:700;
+    background:linear-gradient(to right,#37bef6,#2dd2c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.right{
+    justify-self: left;
+}
+.left{
+    justify-self: right;
+}
+@media (min-width:992px) {
+    .mecard{
+    display: grid;
+    grid-template-columns: repeat(3,33.3%);
+    place-items: center;
+   }
+}

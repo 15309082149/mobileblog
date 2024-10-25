@@ -6,7 +6,7 @@ import { Tag, ErrorBlock } from 'antd-mobile'
 import End from '../../component/end/end'
 import Topback from '../../component/topback/topback'
 const Column = () => {
-    const [blog,setblog] = useState();
+    const [blog,setblog] = useState()
     const [params] = useSearchParams()
     const navigate = useNavigate()
     var fl = params.get('fl')

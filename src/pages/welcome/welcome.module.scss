@@ -41,6 +41,11 @@
     border-radius: 15px;
     border:solid 1px orange;
 }
+@media (min-width:992px) {
+    .card{
+        width:40%;
+    }
+}
 .toptext{
     font-size:23px;
     font-weight:700;

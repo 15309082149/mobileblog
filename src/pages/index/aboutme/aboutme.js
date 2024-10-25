@@ -5,28 +5,40 @@ import { MessageOutline, AppOutline, KoubeiOutline, TravelOutline, GlobalOutline
 import Card from '../../../component/card/card'
 import { Swiper } from 'antd-mobile'
 import End from '../../../component/end/end'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import Loading from '../../../component/loading/loading'
+import Mecard from '../../../component/mecard/mecard'
+import Endlinks from '../../../component/endlinks/endlinks'
 const Aboutme = () => {
+  const [params] = useSearchParams()
   const stackarray = [
     {  url: require('../../../img/stackimg/vue.jpeg'),
-       name: 'Vue'
+       name: 'Vue',
+       class: 'item1'
     },
     {url: require('../../../img/stackimg/react.jpeg'),
-      name: 'React'
+      name: 'React',
+      class: 'item2'
     },
     {url: require('../../../img/stackimg/node.jpeg'),
-      name: 'Node.js'
+      name: 'Node.js',
+      class: 'item3'
     },
     {url: require('../../../img/stackimg/css.jpeg'),
-      name: 'Css'
+      name: 'Css',
+      class: 'item4'
     },
     {url: require('../../../img/stackimg/html.jpeg'),
-      name: 'Html'
+      name: 'Html',
+      class: 'item5'
     },
     {url: require('../../../img/stackimg/ts.jpeg'),
-      name: 'Typescript'
+      name: 'Typescript',
+      class: 'item6'
     },
     {url: require('../../../img/stackimg/js.jpeg'),
-      name: 'Javascript'
+      name: 'Javascript',
+      class: 'item7'
     }
   ]
 
@@ -66,11 +78,22 @@ const Aboutme = () => {
           clearInterval(t)
         }
     },)
+
+    useEffect(()=> {
+      let index= params.get('index')
+      if(index === null) {
+        document.getElementById('load').style.display = "none"
+      }
+    },[])
     return (
         <div className={s.all}>
+          <div id="load">
+          <Loading/></div>
           <div className={s.zw}></div>
           <div className={s.down}>
-            <Card></Card>
+            <Card className={s.card}></Card>
+            <Mecard></Mecard>
+            <div className={s.media1}>
             <div className={s.mode}>
               <div className={s.mtext1}>你好！这里是Clarca的个人博客，感谢关注！</div>
               <div className={s.mtext1}>当前时间:{time}</div>
@@ -82,6 +105,8 @@ const Aboutme = () => {
                 <div className={s.smbtext1}>Learning about <span style={{color:'#36bef3',}}>Back-end development </span>and <span style={{color:'#33c7df',}}>Algorithms</span></div>
               </div>
             </div>
+            </div>
+            <div className={s.media2}>
             <div className={s.swiper}>
               <Swiper
           loop
@@ -95,6 +120,7 @@ const Aboutme = () => {
             </div>
             <div className={s.stack}>
               <div className={s.topiconarea}><AppOutline/><div className={s.iconatext}>Tech stacks</div></div>
+              {/* <div className={s.stackzw}></div> */}
               {stackarray.map((item,index) => {
                 return (
                   <div className={s.sstack} key={index}>
@@ -105,11 +131,13 @@ const Aboutme = () => {
                 )
               })}
             </div>
+            </div>
+            <div className={s.media3}>
             <div className={s.award}>
               <div className={s.topiconarea}><KoubeiOutline /><div className={s.iconatext}>Award</div></div>
               <div className={s.awards}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm10 .5c0 1.93-.58 3.5-4 3.5c-3.41 0-4-1.57-4-3.5V6h8zm4-.5h-2V4h2z"/></svg>
-                待更新
+                大创省级立项2项
               </div>
             </div>
             <div className={s.award}>
@@ -119,7 +147,9 @@ const Aboutme = () => {
                 待更新
               </div>
             </div>
-            <div className={s.award}>
+            </div>
+            <div className={s.media4}>
+            <div className={s.award1}>
               <div className={s.topiconarea}><GlobalOutline /><div className={s.iconatext}>About me</div></div>
               <div className={s.awards}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
@@ -138,6 +168,11 @@ const Aboutme = () => {
                 CSDN:<a>https://blog.csdn.net/2301_80659102</a>
               </div>
             </div>
+            <div className={s.musicimg}>
+              <img src={require("../../../img/music.png")} className={s.musicimgs}></img>
+            </div>
+            </div>
+            <Endlinks></Endlinks>
             <End></End>
           </div>
         </div>

@@ -6,12 +6,15 @@ import Welcome from '../pages/welcome/welcome.js'
 import Details from '../pages/details/details.js'
 import Intro from '../pages/self/introa/intro/intro.js'
 import Aboutweb from '../pages/index/aboutweb/aboutweb.js'
+import Rain from '../pages/vfx/rain/rain.js'
+import Vfxli from '../pages/vfx/vfxli/vfxli.js'
 import Set from '../pages/self/set/set.js'
 import Column from '../pages/column/column.js'
 import Blogs from '../pages/index/blogs/blogs.js'
 import Editor from '../pages/editor/editor.js'
 import Regis from '../pages/regis/regis.js'
 import Login from '../pages/login/login.js'
+import Change from '../pages/vfx/change/change.js'
 import Developing from '../pages/index/developing/developing.js'
 import ChangePass from '../pages/self/introa/changepass/changepass.js'
 import ChangeIn from '../pages/self/introa/changein/changein.js'
@@ -26,7 +29,10 @@ const router = createBrowserRouter([
         {path: 'blogs', element: <Blogs />},
         {path: 'aboutweb', element: <Aboutweb />},
         {path: 'column', element: <Column />},
-        {path: 'developing', element: <Developing />}
+        {path: 'developing', element: <Developing />},
+        {path: 'vfxli', element: <Vfxli />},
+        {path: 'rain', element:<Rain />},
+        {path: 'change', element: <Change />},
         // {path: 'function', element: <Function />},
     ]},
     {path: '/welcome', element:<Welcome />},

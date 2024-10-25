@@ -2,7 +2,6 @@ import { useState } from 'react'
 import s from './editor.module.scss'
 import { Input } from 'antd-mobile'
 import MDEditor from '@uiw/react-md-editor'
-import javar from '../../utils/javar'
 import axios from 'axios'
 const Editor = () => {
     const [time, settime] = useState()

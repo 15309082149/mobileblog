@@ -50,3 +50,8 @@ td{
     font-weight:550;
     color:grey;
 }
+@media (min-width:992px) {
+    .card{
+        display: none;
+    }
+}

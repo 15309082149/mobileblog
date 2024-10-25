@@ -5,6 +5,7 @@
     position: fixed;
     border-bottom:solid 2px #f5f5f5;
     z-index:2;
+    z-index:300;
 }
 .all{
     height:100%;
@@ -72,6 +73,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .item{
     height:50px;
@@ -87,4 +89,30 @@ img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.metopright{
+    width:55%;
+    height:100%;
+    float: right;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(6,170px);
+    display: none;
+}
+@media (min-width:992px) {
+    .topright{
+        display: none;
+    }
+    .metopright{
+        display:grid;
+    }
+    .item{
+        font-size:12px;
+        transition: .6s;
+    }
+    .item:hover{
+        color:#425aef;
+        border-bottom:2px solid #425aef;
+        cursor: pointer;
+    }
 }
