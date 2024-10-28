@@ -27,7 +27,7 @@ import React, { useEffect, useState, useRef } from 'react'
             <div className={s.metopright}>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutme');setv(0)}}>About Clarca</div>
                 <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
-                {/* <div className={s.item} onClick={()=>{navigate('/index/projects');setv(0)}}>Projects</div> */}
+                <div className={s.item} onClick={()=>{navigate('/index/projects');setv(0)}}>Projects</div>
                 <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs</div>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About website</div>
                 <div className={s.item}>主题切换<Theme></Theme></div>
@@ -45,6 +45,7 @@ import React, { useEffect, useState, useRef } from 'react'
             <div className={s.items}>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutme');setv(0)}}>About Clarca</div>
                 <div className={s.item} onClick={()=>{navigate('/index/blogs');setv(0)}}>My blogs</div>
+                <div className={s.item} onClick={()=>{navigate('/index/projects');setv(0)}}>Projects</div>
                 <div className={s.item} onClick={()=>{navigate('/index/vfxli');setv(0)}}>Special vfxs(一些CSS特效)</div>
                 <div className={s.item} onClick={()=>{navigate('/index/aboutweb');setv(0)}}>About this website</div>
                 {/* <div className={s.item} onClick={()=>{navigate('/index/user');setv(0)}}>About me</div> */}
