@@ -1,3 +1,4 @@
+//初版页面，已废弃
 // import s from './function.module.scss'
 // import i from '../../iconfont/iconfont.module.css'
 // import { useNavigate } from 'react-router-dom'

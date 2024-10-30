@@ -1,3 +1,4 @@
+// 专栏页面
 import s from './column.module.scss'
 import { useState, useEffect } from 'react'
 import javar from '../../utils/javar'
@@ -16,14 +17,14 @@ const Column = () => {
     }
     useEffect(()=>{
         async function get() {
-            const data = await javar.get('/flqd',{
+            const data = await javar.get('/flqd',{      //分类请求
                 params: {
                     fl: fl
                 }
             })
             console.log(data.data)
             if(data.data.length === 0) {
-                document.getElementById("null").style.display = "block"
+                document.getElementById("null").style.display = "block"                    //如果没有请求到就显示空图标
             }
             setblog(data.data)
         }

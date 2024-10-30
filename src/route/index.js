@@ -1,3 +1,5 @@
+//路由配置
+
 import Index from '../pages/index/index.js'
 import User from '../pages/self/user/user.js'
 import Aboutme from '../pages/index/aboutme/aboutme.js'

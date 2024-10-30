@@ -1,3 +1,4 @@
+// websocket测试页面，已废弃
 import s from './chat.module.scss'
 import user from '../../store/user'
 import { useEffect, useState } from 'react'

@@ -1,3 +1,4 @@
+//文章列表
 import { useEffect, useState } from 'react'
 import s from './blogs.module.scss'
 import Zl from '../../../component/zl/zl'
@@ -11,13 +12,13 @@ const Blogs = () => {
     const navigate = useNavigate()
     function navi(id) {
         setTimeout(()=>{
-            navigate(`/details?id=${id}`)
+            navigate(`/details?id=${id}`)                  //文章跳转
         },300)
     }
     const [blog, setblog] = useState()
     useEffect(()=> {
         async function getblog () {
-            await javar.get('/blogtext').then(result => {
+            await javar.get('/blogtext').then(result => {                 //获取全部文章
                 setblog(result.data)
                 console.log(blog)
             })

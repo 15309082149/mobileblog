@@ -1,3 +1,5 @@
+//基于zustand，用于储存用户ID，现已废弃
+
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 // import { persist } from 'zustand-persist';

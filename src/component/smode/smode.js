@@ -1,3 +1,4 @@
+// 小模块（已废弃）
 import s from './smode.module.scss'
 
 const Smode = ({ icon }) => {

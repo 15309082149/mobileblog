@@ -1,3 +1,4 @@
+// 末尾链接
 import s from './endlinks.module.scss'
 
 const Endlinks = () => {

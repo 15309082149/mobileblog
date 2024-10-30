@@ -1,9 +1,9 @@
+//  详情页
  import React, { useEffect, useState } from 'react'
 import { NavBar, Space, DotLoading, Popup, Input, Button, Toast } from 'antd-mobile'
 import s from './details.module.scss'
 import { MoreOutline,LikeOutline, HeartOutline, MessageOutline, HeartFill } from 'antd-mobile-icons'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import request from '../../utils/request.js'
 import javar from '../../utils/javar.js'
 import MDEditor from '@uiw/react-md-editor'
 import End from '../../component/end/end.js'
@@ -13,7 +13,7 @@ import Topback from '../../component/topback/topback.js'
 const Details = () => {
     // window.scrollTo(0, 0);
     const [params] = useSearchParams()
-    let id = params.get('id')
+    let id = params.get('id')         //根据ID查找对应文章
     const navigate = useNavigate()
     const [content,setcontent] = useState() //文章内容
     const [blog,setblog] = useState() //
@@ -24,54 +24,54 @@ const Details = () => {
     const [like,setlike] = useState(0)  //点赞数
 
 
-    async function getpre() {                                  //根据文章ID查找文章所有评论
-      const { data } = await javar.get('/getpreview',{
-        params: {
-          id: id
-        }
-      })
-      setpre(data)
-    }
+    // async function getpre() {                                  //根据文章ID查找文章所有评论
+    //   const { data } = await javar.get('/getpreview',{
+    //     params: {
+    //       id: id
+    //     }
+    //   })
+    //   setpre(data)
+    // }
 
 
-    async function getlike() {
-      const array = await javar.get('/likenum',{ //获取点赞的数量
-        params: {
-          id: params.get('id')
-        }
-      })
-      setlike(array.data.length)
-    }
+    // async function getlike() {
+    //   const array = await javar.get('/likenum',{ //获取点赞的数量
+    //     params: {
+    //       id: params.get('id')
+    //     }
+    //   })
+    //   setlike(array.data.length)
+    // }
 
 
-    useEffect(() => {
-      // const theme = localStorage.getItem('theme')
-      // if(theme === 'dark') {
-      //   console.log(document.getElementById('bcg'))
-      //   document.getElementById('bcg').style.removeProperty("background")
-      // }
+  //   useEffect(() => {
+  //     // const theme = localStorage.getItem('theme')
+  //     // if(theme === 'dark') {
+  //     //   console.log(document.getElementById('bcg'))
+  //     //   document.getElementById('bcg').style.removeProperty("background")
+  //     // }
 
-    async function getuser() {                                 //保证评论功能根据用户查找，以实现用户与各自评论对应
-      const { data } = await javar.get('/user',{
-        params: {
-          id: String(userid)  //userid是从本地仓库拿出的id
-        }
-      })
-      setme(data[0].id)
-      setusername(data[0].username)
-  }
-    getuser()
-    getlike()
-    },[])
+  //   async function getuser() {                                 //保证评论功能根据用户查找，以实现用户与各自评论对应
+  //     const { data } = await javar.get('/user',{
+  //       params: {
+  //         id: String(userid)  //userid是从本地仓库拿出的id
+  //       }
+  //     })
+  //     setme(data[0].id)
+  //     setusername(data[0].username)
+  // }
+  //   getuser()
+  //   getlike()
+  //   },[])
 
 
   const [pre,setpre] = useState([])
 
-  useEffect(()=> {
+  // useEffect(()=> {
 
-    // setTimeout(getpre(),2000)
-    getpre()
-  },[])
+  //   // setTimeout(getpre(),2000)
+  //   getpre()
+  // },[])
 
 
     useEffect(()=> {
@@ -88,8 +88,7 @@ const Details = () => {
                 id: id
               }
             })
-            console.log(data2.data)
-            setblog(data2.data)
+            setblog(data2.data)               //文章详情
             // const data2 = await request.get('/title',{
             //     params: {
             //         id: id
@@ -120,87 +119,87 @@ const Details = () => {
     },[content])
 
 
-    const [loves,setloves] = useState(true)
+    // const [loves,setloves] = useState(true)
 
-    function loved() {
-        setloves(!loves)
-    }
+    // function loved() {
+    //     setloves(!loves)            //喜欢
+    // }
 
 
-    const back = () =>                                       //顶部返回功能
-    {
-      document.getElementById('all').style.opacity = '0'
-      setTimeout(()=>{
-          navigate(-1)
-      },500)
-    }
+  //   const back = () =>                                       //顶部返回功能
+  //   {
+  //     document.getElementById('all').style.opacity = '0'
+  //     setTimeout(()=>{
+  //         navigate(-1)
+  //     },500)
+  //   }
 
-     const right = (
-    <div style={{ fontSize: 24 }}>
-      <Space style={{ '--gap': '16px' }}>
-        <MoreOutline />
-      </Space>
-    </div>
-  )
+  //    const right = (
+  //   <div style={{ fontSize: 24 }}>
+  //     <Space style={{ '--gap': '16px' }}>
+  //       <MoreOutline />
+  //     </Space>
+  //   </div>
+  // )
   
   const [visible1, setVisible1] = useState(false)
 
   const [value, setValue] = useState('')
 
-  function sendmessage() {
-        if(me === 1) {
-          Toast.show({
-            content:"未登录无法发表评论!"
-          })
-          return
-        }
-        if(value === '') {
-          Toast.show({
-            content:"评论不能为空！"
-          })
-          return
-        }
-        let date = new Date()
-        javar.get('/sendmessage',{                                  //发送评论需要用户对应
-          params: {
-            id: params.get('id'),
-            userid: me,
-            content: value,
-            username:username,
-            time: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-          }
-        }).then(result=>{
-          if(result.data) {
-          getpre()
-          Toast.show('发送成功！')
-          setValue('')                        //判断是否发送成功，如果成功再次渲染并清空输入框
-          }
-          else {
-            Toast.show('发送失败！')
-          }
-        })
-    }
+  // function sendmessage() {
+  //       if(me === 1) {
+  //         Toast.show({
+  //           content:"未登录无法发表评论!"
+  //         })
+  //         return
+  //       }
+  //       if(value === '') {
+  //         Toast.show({
+  //           content:"评论不能为空！"
+  //         })
+  //         return
+  //       }
+  //       let date = new Date()
+  //       javar.get('/sendmessage',{                                  //发送评论需要用户对应
+  //         params: {
+  //           id: params.get('id'),
+  //           userid: me,
+  //           content: value,
+  //           username:username,
+  //           time: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+  //         }
+  //       }).then(result=>{
+  //         if(result.data) {
+  //         getpre()
+  //         Toast.show('发送成功！')
+  //         setValue('')                        //判断是否发送成功，如果成功再次渲染并清空输入框
+  //         }
+  //         else {
+  //           Toast.show('发送失败！')
+  //         }
+  //       })
+  //   }
 
 
-    function likes() {
-      javar.get('/addlikes',{
-        params: {
-          id: params.get('id'),
-          userid: userid
-        }
-      }
-      ).then(result=>{
-        if(result.data) {                     //利用后端返回值判断此用户是否点赞过这个文章，0为已经点赞过
-          getlike()
-        }
-        else {
-          Toast.show('您已点赞过该文章！')
-        }
-      })
-    }
+    // function likes() {
+    //   javar.get('/addlikes',{
+    //     params: {
+    //       id: params.get('id'),
+    //       userid: userid
+    //     }
+    //   }
+    //   ).then(result=>{
+    //     if(result.data) {                     //利用后端返回值判断此用户是否点赞过这个文章，0为已经点赞过
+    //       getlike()
+    //     }
+    //     else {
+    //       Toast.show('您已点赞过该文章！')
+    //     }
+    //   })
+    // }
 
 
-    const [swipe,setswipe] = useState(true)
+    // const [swipe,setswipe] = useState(true)
 
     return (
         <div className={s.all} id="all">
@@ -227,7 +226,7 @@ const Details = () => {
         </div>
         <End></End>
         <div className={s.zw}></div>
-        <div className={s.bottom}>
+        {/* <div className={s.bottom}>
             <div className={s.good}>
                 <div className={s.lefticon} onClick={()=>{likes()}}><LikeOutline /><div className={s.likesnum}>{like}</div></div>
                 <div className={s.righticon}><LikeOutline /></div>
@@ -273,7 +272,7 @@ const Details = () => {
         <Button className={s.send} color='success' onClick={()=>sendmessage()}>发送</Button>
               </div>
             </Popup>
-            </div>
+            </div> */}
         </div>
     )
 }

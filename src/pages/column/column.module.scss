@@ -66,3 +66,8 @@
     justify-content: end;
     align-items: center;
 }
+@media (min-width:992px) {
+    .blogs{
+        width:40%;
+    }
+}

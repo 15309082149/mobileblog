@@ -1,3 +1,4 @@
+//  导航栏
  import { UnorderedListOutline, CloseOutline } from 'antd-mobile-icons'
 import React, { useEffect, useState, useRef } from 'react'
  import { Popup,Dropdown } from 'antd-mobile'
@@ -15,7 +16,7 @@ import React, { useEffect, useState, useRef } from 'react'
         else {
             p.style.visibility = 'hidden'
             p.style.opacity = 0
-        }
+        }                  //控制弹出层的可见，使用visibility属性是防止其zIndex太高挡住下面的元素使其无法点击，opacity属性是为了消失时transition生效，实现自然过渡
     }
     return (
         <div className={s.all}>

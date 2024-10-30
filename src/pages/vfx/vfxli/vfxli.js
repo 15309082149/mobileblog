@@ -1,3 +1,4 @@
+//特效主页
 import s from './vfxli.module.scss'
 import { useNavigate} from 'react-router-dom'
 import Loading from '../../../component/loading/loading'

@@ -1,4 +1,4 @@
-
+//关于我
 import React, { useEffect, useState, useRef } from 'react'
 import s from './aboutme.module.scss'
 import { MessageOutline, AppOutline, KoubeiOutline, TravelOutline, GlobalOutline } from 'antd-mobile-icons'
@@ -11,7 +11,7 @@ import Mecard from '../../../component/mecard/mecard'
 import Endlinks from '../../../component/endlinks/endlinks'
 const Aboutme = () => {
   const [params] = useSearchParams()
-  const stackarray = [
+  const stackarray = [                                    //技术栈数组，存放图片地址与名称
     {  url: require('../../../img/stackimg/vue.jpeg'),
        name: 'Vue',
        class: 'item1'
@@ -44,7 +44,7 @@ const Aboutme = () => {
 
   const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac']
   const changetime = 10000
-    const items = colors.map((color, index) => (
+    const items = colors.map((color, index) => (                    //跑马灯
   <Swiper.Item key={index}>
     <div
       className={s.content}
@@ -60,7 +60,7 @@ const Aboutme = () => {
 
 
     useEffect(()=> {
-        const t = setInterval(()=>{
+        const t = setInterval(()=>{                                       //获取时间，每秒获取一次
           const now = new Date();
 
           const year = now.getFullYear();

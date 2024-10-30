@@ -1,3 +1,4 @@
+// 文章编辑页，只能通过路由进行跳转，可以添加条件
 import { useState } from 'react'
 import s from './editor.module.scss'
 import { Input } from 'antd-mobile'
@@ -21,7 +22,7 @@ const Editor = () => {
         if(title&&value&&text&&fl&&time) {
             axios({
                 method: 'post',
-                url:'http://47.96.39.47:8080/addblog',
+                url:'http://127.0.0.1:8080/addblog',          //这里换成你的后端地址
                 data: {
                 title: title,
                 text: text,
