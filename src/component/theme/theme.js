@@ -1,4 +1,5 @@
 // 主题切换按钮
+import s from './theme.module.scss'
 import { Switch } from 'antd-mobile'
 const Theme = () => {
     
@@ -15,8 +16,8 @@ const Theme = () => {
         document.documentElement.setAttribute('data-theme', theme)
   }
     return (
-    <div>
-        <Switch
+    <div className={s.po}>
+        <Switch className={s.po}
           uncheckedText='白' checkedText='黑'
           onChange={()=>{changeDark('dark')}}
           defaultChecked={ pp }

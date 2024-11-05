@@ -225,7 +225,7 @@ const Details = () => {
           </div>
         </div>
         <End></End>
-        <div className={s.zw}></div>
+        {/* <div className={s.zw}></div> */}
         {/* <div className={s.bottom}>
             <div className={s.good}>
                 <div className={s.lefticon} onClick={()=>{likes()}}><LikeOutline /><div className={s.likesnum}>{like}</div></div>

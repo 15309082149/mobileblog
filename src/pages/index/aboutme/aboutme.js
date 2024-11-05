@@ -41,18 +41,18 @@ const Aboutme = () => {
       class: 'item7'
     }
   ]
-
+  const swiperarr = [
+    {url: require("../../../img/runh/1.png")},
+    {url: require("../../../img/runh/2.png")},
+    {url: require("../../../img/runh/3.png")},
+    {url: require("../../../img/runh/4.png")},
+    {url: require("../../../img/runh/5.png")},
+  ]
   const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac']
   const changetime = 10000
-    const items = colors.map((color, index) => (                    //跑马灯
-  <Swiper.Item key={index}>
-    <div
-      className={s.content}
-      style={{ background: color }}
-      autoplayInterval={changetime}
-    >
-      广告招租
-    </div>
+    const items = swiperarr.map((item, index) => (                    //跑马灯
+  <Swiper.Item key={index} className={s.switem}>
+    <img src={item.url} className={s.swimg} style={{borderRadius:'15px'}}></img>
   </Swiper.Item>
 ))
 
@@ -102,7 +102,7 @@ const Aboutme = () => {
               <div className={s.topiconarea}><MessageOutline /><div className={s.iconatext}>Studied software engineering at Southwest Petroleum University</div></div>
               <div className={s.smbottom}>
                 <div className={s.smbtext}>Current study direction is <span style={{color:'#2dd1c3',}}>Front-end</span> developing</div>
-                <div className={s.smbtext1}>Learning about <span style={{color:'#36bef3',}}>Back-end development </span>and <span style={{color:'#33c7df',}}>Algorithms</span></div>
+                <div className={s.smbtext1}>Learning about <span style={{color:'#36bef3',}}>Back-end development </span> <span style={{color:'#33c7df',}}>Algorithms</span> and <span style={{color:'#33c7df',}}>Unity</span></div>
               </div>
             </div>
             </div>
@@ -111,9 +111,10 @@ const Aboutme = () => {
               <Swiper
           loop
           autoplay
-          onIndexChange={i => {
-            console.log(i, 'onIndexChange1')
-          }}
+          style={{borderRadius:'15px'}}
+          // onIndexChange={i => {
+            
+          // }}
         >
           {items}
         </Swiper>

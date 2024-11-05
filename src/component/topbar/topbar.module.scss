@@ -116,6 +116,6 @@ img{
     .item:hover{
         color:#425aef;
         border-bottom:2px solid #425aef;
-        cursor: pointer;
+        cursor: url('../../../public/breeze/Hand2.cur'),pointer;
     }
 }

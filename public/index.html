@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon shortcut" href="%PUBLIC_URL%/ava.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/ava.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -27,6 +27,33 @@
     <title>Clarca's blog</title>
     <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
     <script>LA.init({id:"3K8Oe011r5tBhwGN",ck:"3K8Oe011r5tBhwGN",hashMode:true})</script>
+    <style>
+      /*此为笔者网站较为个性化的鼠标指针样式，可结合个人需要自行修改*/
+body {
+	cursor: url('/breeze/Arrow.cur'), default;
+}
+select{
+	cursor: url(Hand.cur), pointer;
+}
+button,a:hover{
+	cursor: url('/breeze/Hand2.cur'), pointer;
+}
+input{
+	cursor:url(Help.cur), text;	
+}
+textarea,input:focus{
+	cursor:url(IBeam.cur), text;	
+}
+code{
+	cursor: url('/breeze/Handwriting.cur'), default;	
+}
+pre>code{
+	cursor: url('/breeze/Copy.cur'), default;	
+}
+html {
+  overflow-y: scroll;
+}
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

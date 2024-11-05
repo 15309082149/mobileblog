@@ -68,7 +68,7 @@
     background:linear-gradient(to right,#37bef6,#2dd2c1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    cursor: pointer;
+    cursor: url('../../../public/breeze/Hand2.cur'),pointer;
 }
 .project{
     display: flex;
