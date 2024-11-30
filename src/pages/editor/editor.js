@@ -22,7 +22,7 @@ const Editor = () => {
         if(title&&value&&text&&fl&&time) {
             axios({
                 method: 'post',
-                url:'http://127.0.0.1:8080/addblog',          //这里换成你的后端地址
+                url:'http://47.96.39.47:8080/addblog',          //这里换成你的后端地址
                 data: {
                 title: title,
                 text: text,

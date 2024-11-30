@@ -5,6 +5,10 @@ import { MessageOutline, AppOutline, KoubeiOutline, TravelOutline, GlobalOutline
 import Card from '../../../component/card/card'
 import { Swiper } from 'antd-mobile'
 import End from '../../../component/end/end'
+import Lottie from 'lottie-react'
+import animation1 from '../../../static/lotties/animation1.json'
+import animation2 from '../../../static/lotties/animation2.json'
+import animation3 from '../../../static/lotties/animation3.json'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import Loading from '../../../component/loading/loading'
 import Mecard from '../../../component/mecard/mecard'
@@ -27,7 +31,9 @@ const Aboutme = () => {
     {url: require('../../../img/stackimg/css.jpeg'),
       name: 'Css',
       class: 'item4'
-    },
+    }
+  ]
+  const stackarray2 = [
     {url: require('../../../img/stackimg/html.jpeg'),
       name: 'Html',
       class: 'item5'
@@ -39,6 +45,10 @@ const Aboutme = () => {
     {url: require('../../../img/stackimg/js.jpeg'),
       name: 'Javascript',
       class: 'item7'
+    },
+    {url: require('../../../img/stackimg/next.jpeg'),
+      name: 'next',
+      class: 'item8'
     }
   ]
   const swiperarr = [
@@ -95,14 +105,25 @@ const Aboutme = () => {
             <Mecard></Mecard>
             <div className={s.media1}>
             <div className={s.mode}>
-              <div className={s.mtext1}>你好！这里是Clarca的个人博客，感谢关注！</div>
+              <div className={s.mtext1} style={{fontSize: '20px',fontWeight: '700'}}>你好！这里是Clarca的个人博客，感谢关注！</div>
               <div className={s.mtext1}>当前时间:{time}</div>
+              <div className={s.lottie1}>
+                <Lottie animationData={animation1} className={s.animation}></Lottie>
+              </div>
             </div>
             <div className={s.smode}>
               <div className={s.topiconarea}><MessageOutline /><div className={s.iconatext}>Studied software engineering at Southwest Petroleum University</div></div>
               <div className={s.smbottom}>
-                <div className={s.smbtext}>Current study direction is <span style={{color:'#2dd1c3',}}>Front-end</span> developing</div>
-                <div className={s.smbtext1}>Learning about <span style={{color:'#36bef3',}}>Back-end development </span> <span style={{color:'#33c7df',}}>Algorithms</span> and <span style={{color:'#33c7df',}}>Unity</span></div>
+                <div className={s.smbtext}>目前学习方向 <span style={{color:'#2dd1c3',}}>前端</span> 开发</div>
+                {/* <div className={s.smbtext1}>正在学习 <span style={{color:'#36bef3',}}>后端开发 </span> 及 <span style={{color:'#33c7df',}}>Unity游戏开发</span></div> */}
+              </div>
+              <div className={s.smicon}>
+                <div className={s.smicons}>
+                  <Lottie animationData={animation2} className={s.animation}></Lottie>
+                </div>
+                <div className={s.smicons}>
+                  <Lottie animationData={animation3} className={s.animation} style={{transform: 'scale(70%)'}}></Lottie>
+                </div>
               </div>
             </div>
             </div>
@@ -122,16 +143,29 @@ const Aboutme = () => {
             <div className={s.stack}>
               <div className={s.topiconarea}><AppOutline/><div className={s.iconatext}>Tech stacks</div></div>
               <div className={s.stacks}>
+                <div className={s.stackmo}>
+              <div className={s.stacks1}>
               {/* <div className={s.stackzw}></div> */}
               {stackarray.map((item,index) => {
                 return (
                   <div className={s.sstack} key={index}>
                 <div className={s.stackicon}><img src={item.url}></img></div>
-                <div className={s.stacktext}>{item.name}</div>
+                {/* <div className={s.stacktext}>{item.name}</div> */}
               </div>
-
                 )
               })}
+              </div>
+              <div className={s.stacks2}>
+              {stackarray2.map((item,index) => {
+                return (
+                  <div className={s.sstack} key={index}>
+                <div className={s.stackicon}><img src={item.url}></img></div>
+                {/* <div className={s.stacktext}>{item.name}</div> */}
+              </div>
+                )
+              })}
+              </div>
+              </div>
               </div>
             </div>
             </div>

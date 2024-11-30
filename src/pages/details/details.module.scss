@@ -2,21 +2,22 @@
     width:92%;
     align-self: center;
     height:80%;
-    background-color: var(--mdbcg);
+    z-index:2;
+    background-color: var(--bcgcolor);
 }
 pre{
     color:black;
-    background-color: var(--mdbcg);
+    background-color: var(--bcgcolor);
 }
 :root .markd{
-    background: var(--mdbcg);
+    background: var(--bcgcolor);
     color:var(--textcolor);
 }
 .all{
     -webkit-animation: all .6s linear;
     animation: all .6s linear;
     transition: .6s;
-    background-color: var(--mdbcg);
+    background-color: var(--bcgcolor);
 }
 // .bcg{
 //     width:100%;
@@ -29,6 +30,14 @@ pre{
 //     // background-size: 200%;
 //     // opacity: .09;
 // }
+.bcg{
+    height:100%;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--bcgcolor);
+}
 @keyframes back{
     0%{
         opacity: 1;
@@ -223,5 +232,8 @@ pre{
 @media (min-width:992px) {
     .bcg{
         background-size: 80%;
+    }
+    .detail{
+        width:50%;
     }
 }

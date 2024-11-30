@@ -7,15 +7,17 @@ import { useNavigate } from 'react-router-dom'
 const Zl = () => {
     const navigate = useNavigate()
     const zlarray = [
-        {title: 'Vue源码解析',content:'最近为了深入研究Vue框架而写的源码解析',color:'#37bef6',zlid:'zl1',inid:'in1',iconid:'icon1',iskai:false},
+        {title: 'vue源码解析',content:'最近为了深入研究框架而写的源码解析',color:'#37bef6',zlid:'zl1',inid:'in1',iconid:'icon1',iskai:false},
         {title: '学习笔记',content:'从开始学习软件到现在所有的学习笔记',color:'#2ed0c5',zlid:'zl2',inid:'in2',iconid:'icon2',iskai:false},
         {title: '日常笔记',content:'日常记录',color:'#fb9e35',zlid:'zlw3',inid:'in3',iconid:'icon3',skai:false},
         {title: 'Leetcode刷题笔记',content:'平时在力扣上刷题的解析与笔记',color:'#27e78b',zlid:'zlw4',inid:'in4',iconid:'icon4',skai:false},
+        {title: '面经',content:'面试总结',color:'#a578dc',zlid:'zlw5',inid:'in5',iconid:'icon5',skai:false},
     ]                                    //专栏数组，其中zlid,inid,iconid随之递推即可
     const [kai1, setkai1] = useState(true)
     const [kai2, setkai2] = useState(true)
     const [kai3, setkai3] = useState(true)
-    const [kai4, setkai4] = useState(true)            //控制每个专栏处于什么状态
+    const [kai4, setkai4] = useState(true)
+    const [kai5, setkai5] = useState(true)           //控制每个专栏处于什么状态
     function zhankai(zlz,inz,iconz,index) {
         const zl = document.getElementById(zlz)
         const in1 = document.getElementById(inz)
@@ -68,6 +70,18 @@ const Zl = () => {
             in1.style.opacity = 0
             icon.style.transform = "rotate(-0deg)"
         }setkai4(!kai4)
+            break;
+            case 4:
+            if(kai5 === true) {
+            zl.style.height = 100 + 'px'
+            in1.style.opacity = 1
+            icon.style.transform = "rotate(45deg)"
+        }
+        else {
+            zl.style.height = 60 + 'px'
+            in1.style.opacity = 0
+            icon.style.transform = "rotate(-0deg)"
+        }setkai5(!kai5)
             break;
             default: console.log('error')
         }                     //每添加一个专栏就switch一个，每个开关里面都有if else判断(逻辑有些麻烦，如有更好的思路欢迎修改)

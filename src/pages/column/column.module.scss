@@ -5,6 +5,9 @@
     z-index:1;
     position: absolute;
     width:100%;
+    background-color: var(--bcgcolor);
+    color:var(--textcolor);
+    transition: .3s;
 }
 .zw{
     height:70px;
@@ -25,7 +28,7 @@
 .blogs{
     width:90%;
     height:100px;
-    background-color: #f5f5f5;
+    background-color: var(--mdbcg);
     margin-bottom:15px;
     border-radius: 15px;
     border:solid 1px #e5e7eb; 
