@@ -8,6 +8,11 @@
     background-color: var(--bcgcolor);
     color:var(--textcolor);
     transition: .6s;
+    scrollbar-width: none;
+}
+.all::-webkit-scrollbar{
+    display:none;
+    width:none;
 }
 .zw{
     height:70px;

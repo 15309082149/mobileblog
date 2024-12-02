@@ -1,10 +1,13 @@
 // 个人名片卡
 import s from './card.module.scss'
+import animation from '../../static/lotties/animation5.json'
+import Lottie from 'lottie-react'
 const Card = () => {
     return(
         <div className={s.card}>
               <div className={s.avatorarea}>
                 <div className={s.avator}>
+                  <Lottie animationData={animation} className={s.lottie}></Lottie>
                   <img src={require("../../img/ava.png")} className={s.ava}></img>
                 </div>
               </div>

@@ -10,7 +10,7 @@ const Index = () => {
     const navigate= useNavigate()
     const { pathname } = useLocation
     return (
-        <div className='All'>
+        <div className='all'>
             <Topbar></Topbar>
         <Outlet />     {/*二级路由出口*/}
         </div>

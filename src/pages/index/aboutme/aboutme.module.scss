@@ -11,6 +11,22 @@ $backcolor: #f5f5f5;
     background-color: var(--bcgcolor);
     transition: .6s;
 }
+.all::-webkit-scrollbar{
+    display:none;
+}
+.back{
+    animation:begin .3s linear;
+    animation-delay: .5s;
+}
+@keyframes begin {
+    from{
+        transform:scale(97%)
+    }
+    to{
+        transform: scale(100%);
+    }
+    
+}
 .zw{
     height:70px;
 }
@@ -27,10 +43,21 @@ $backcolor: #f5f5f5;
     margin-top:15px;
     max-height:200px;
 }
+.map{
+    width: 80%;
+    margin-top:15px;
+    max-height:250px;
+    border-radius: 15px;
+}
 .musicimgs{
     border-radius: 15px;
     max-height:200px;
     width:100%;
+}
+.interests{
+    width: 100%;
+    margin-top:15px;
+    max-height:200px;
 }
 .down{
     z-index:2;
@@ -64,12 +91,22 @@ $backcolor: #f5f5f5;
     justify-content: center;
     align-items: center;
 }
+.interlottie{
+    position: absolute;
+    width:100%;
+    height:100%;
+    transform: scale(180%);
+}
+.interlottieA{
+    width:100%;
+    height:100%;
+}
 .animation{
     width:100%;
     height:100%;
 }
 .topiconarea{
-    height:20px;
+    height:30px;
     width:100%;
     padding:5px;
     font-size:20px;
@@ -167,7 +204,7 @@ $backcolor: #f5f5f5;
     margin-bottom:15px;
 }
 .stacks{
-    width:80%;
+    width:95%;
     justify-self: center;
     align-self: center;
     height:90px;
@@ -204,11 +241,12 @@ $backcolor: #f5f5f5;
         animation-delay: 10s;
     }
     .sstack{
-        width:25%;
+        width:20%;
     }
 .stackicon{
     height:80%;
-    width:80%;
+    width:85%;
+    border-radius: 10px;
 }
 .stacktext{
     font-weight:600;
@@ -223,14 +261,40 @@ $backcolor: #f5f5f5;
     background-color: #f5f5f5;
     border-radius: 15px;
 }
+.inters{
+    width:100%;
+    margin-top:15px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    position: relative;
+}
 .awards{
     width:100%;
     height:40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size:16px;
+    font-weight:500;
 }
-.smode,.stack,.award,.award1{
+a{
+    text-decoration: underline;
+}
+.social{
+    padding-left:10%;
+    width:100%;
+    height:40px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    font-size:16px;
+    font-weight:500;
+}
+.awardicon{
+    height:40px;
+    width:40px;
+}
+.smode,.stack,.award,.award1,.inters{
     background-color: var(--mdbcg);
 }
 @media (min-width:992px) {
@@ -245,6 +309,14 @@ $backcolor: #f5f5f5;
         min-height:200px;
         margin-right:5%;
     }
+    .inters{
+        min-height:200px;
+        width:50%;
+    }
+    .map{
+        width:60%;
+        max-height:300px;
+    }
     .award:nth-child(1){
         margin-right:5%;
     }
@@ -256,6 +328,7 @@ $backcolor: #f5f5f5;
         height:150px;
         width:40%;
         margin-left:4%;
+        backdrop-filter: blur(10px);
     }
     .switem{
         height:220px;
@@ -288,19 +361,30 @@ $backcolor: #f5f5f5;
         position: absolute;
         width:100%;
         animation: move 20s linear infinite;
+        animation-delay:10s;
     }
     .stacks2{
         left:100%;
         position: absolute;
         width:100%;
         animation: move 20s linear infinite;
-        animation-delay: 10s;
     }
     .sstack{
-        width:25%;
+        width:20%;
     }
    .card{
     width:30%;
+   }
+   .interests{
+    border-radius: 15px;
+    max-height:200px;
+    width:45%;
+    margin-top:20px;
+    margin-right:5%;
+   }
+   .stackicon{
+    width:90%;
+    height:90%;
    }
 }
 @keyframes move {

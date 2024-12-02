@@ -13,6 +13,10 @@
     width:100%;
     transition:.6s;
     position: absolute;
+    scrollbar-width: none;
+}
+.all::-webkit-scrollbar{
+    display:none;
 }
 .me{
     height:100%;
